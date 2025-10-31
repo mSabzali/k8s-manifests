@@ -1,0 +1,70 @@
+apiVersion: v1
+items:
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: "2025-10-23T12:21:57Z"
+    generation: 2
+    labels:
+      app: hi-dev
+    name: hi-dev-deployment
+    namespace: stg
+    resourceVersion: "175070"
+    uid: 1de8569f-0a86-4c1c-a6fd-cfbe4f9f20b3
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 2
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: hi-dev
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: hi-dev
+      spec:
+        containers:
+        - image: sabzali/devops-api:2025.10.23-14
+          imagePullPolicy: IfNotPresent
+          name: hi-dev
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 2
+    conditions:
+    - lastTransitionTime: "2025-10-23T12:21:58Z"
+      lastUpdateTime: "2025-10-23T12:31:17Z"
+      message: ReplicaSet "hi-dev-deployment-5965b8947c" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    - lastTransitionTime: "2025-10-26T07:23:06Z"
+      lastUpdateTime: "2025-10-26T07:23:06Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    observedGeneration: 2
+    readyReplicas: 2
+    replicas: 2
+    updatedReplicas: 2
+kind: List
+metadata:
+  resourceVersion: ""
