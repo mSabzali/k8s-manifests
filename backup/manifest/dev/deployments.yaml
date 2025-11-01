@@ -28,7 +28,7 @@ items:
           app: hi-dev
       spec:
         containers:
-        - image: sabzali/devops-api:2025.10.23-14
+        - image: sabzali/devops-api:2025.11.01-19
           imagePullPolicy: IfNotPresent
           name: hi-dev
           ports:
