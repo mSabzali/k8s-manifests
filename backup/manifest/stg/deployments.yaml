@@ -5,14 +5,10 @@ items:
   metadata:
     annotations:
       deployment.kubernetes.io/revision: "1"
-    creationTimestamp: "2025-10-23T12:21:57Z"
-    generation: 2
     labels:
       app: hi-dev
     name: hi-dev-deployment
     namespace: stg
-    resourceVersion: "175070"
-    uid: 1de8569f-0a86-4c1c-a6fd-cfbe4f9f20b3
   spec:
     progressDeadlineSeconds: 600
     replicas: 2
@@ -32,7 +28,7 @@ items:
           app: hi-dev
       spec:
         containers:
-        - image: sabzali/devops-api:2025.10.23-14
+        - image: sabzali/devops-api:2025.11.01-19
           imagePullPolicy: IfNotPresent
           name: hi-dev
           ports:

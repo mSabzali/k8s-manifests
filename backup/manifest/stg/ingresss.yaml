@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hi-dev-ingress
+  namespace: stg 
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths: 
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hi-dev-service
+                port:
+                  number: 80
