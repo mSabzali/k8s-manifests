@@ -13,8 +13,6 @@ items:
       k8s-app: calico-kube-controllers
     name: calico-kube-controllers
     namespace: kube-system
-    resourceVersion: "175231"
-    uid: 340ed360-39b0-449a-bfda-d6cdfa2a6d34
   spec:
     progressDeadlineSeconds: 600
     replicas: 1
@@ -110,8 +108,7 @@ items:
       k8s-app: kube-dns
     name: coredns
     namespace: kube-system
-    resourceVersion: "175048"
-    uid: cd5be674-ba7d-4ac2-a9bb-ee7fa1be5d1e
+    resourceVersion: "175048" 
   spec:
     progressDeadlineSeconds: 600
     replicas: 2

@@ -46,8 +46,6 @@ items:
     creationTimestamp: "2025-10-03T14:05:17Z"
     name: calico-config
     namespace: kube-system
-    resourceVersion: "2137"
-    uid: 1ac49d39-c740-4820-b57d-fccdeb159fd2
 - apiVersion: v1
   data:
     Corefile: |
@@ -75,9 +73,7 @@ items:
   metadata:
     creationTimestamp: "2025-10-03T13:42:53Z"
     name: coredns
-    namespace: kube-system
-    resourceVersion: "253"
-    uid: 10f08a23-7401-49d1-9980-be87ff5eded6
+    namespace: kube-system 
 - apiVersion: v1
   data:
     client-ca-file: |
@@ -128,9 +124,7 @@ items:
   metadata:
     creationTimestamp: "2025-10-03T13:42:51Z"
     name: extension-apiserver-authentication
-    namespace: kube-system
-    resourceVersion: "33"
-    uid: 2918b6df-efba-47a5-a6f4-2498590d41cc
+    namespace: kube-system 
 - apiVersion: v1
   data:
     since: "2025-10-03"
@@ -138,9 +132,7 @@ items:
   metadata:
     creationTimestamp: "2025-10-03T13:42:51Z"
     name: kube-apiserver-legacy-service-account-token-tracking
-    namespace: kube-system
-    resourceVersion: "26"
-    uid: bcf0044c-ee9c-4a88-9180-28913be8670e
+    namespace: kube-system 
 - apiVersion: v1
   data:
     config.conf: |-
@@ -238,9 +230,7 @@ items:
     labels:
       app: kube-proxy
     name: kube-proxy
-    namespace: kube-system
-    resourceVersion: "262"
-    uid: e7de4277-977f-4af8-bd07-3cd5d5132348
+    namespace: kube-system 
 - apiVersion: v1
   data:
     ca.crt: |
@@ -272,9 +262,7 @@ items:
         of Kubernetes clusters.
     creationTimestamp: "2025-10-03T13:43:09Z"
     name: kube-root-ca.crt
-    namespace: kube-system
-    resourceVersion: "377"
-    uid: 2f6c5388-e979-4e0b-98c3-eb58ac7416ed
+    namespace: kube-system 
 - apiVersion: v1
   data:
     ClusterConfiguration: |
@@ -301,9 +289,7 @@ items:
   metadata:
     creationTimestamp: "2025-10-03T13:42:53Z"
     name: kubeadm-config
-    namespace: kube-system
-    resourceVersion: "236"
-    uid: 4df5ebcd-5876-4e69-a8c0-d7fd789cfa0c
+    namespace: kube-system 
 - apiVersion: v1
   data:
     kubelet: |
@@ -361,9 +347,7 @@ items:
       kubeadm.kubernetes.io/component-config.hash: sha256:14a463ee2caafeaa2b6d58bb8c225fb8e9e4509ed1a77d8c55a943bc7d89f7ac
     creationTimestamp: "2025-10-03T13:42:53Z"
     name: kubelet-config
-    namespace: kube-system
-    resourceVersion: "239"
-    uid: 19d0dd77-9058-48cb-946d-7db90418a701
+    namespace: kube-system 
 kind: List
 metadata:
   resourceVersion: ""

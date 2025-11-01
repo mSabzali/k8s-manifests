@@ -12,9 +12,7 @@ items:
       kubernetes.io/cluster-service: "true"
       kubernetes.io/name: CoreDNS
     name: kube-dns
-    namespace: kube-system
-    resourceVersion: "261"
-    uid: cb515132-13f6-4e1e-8edb-4b4339649cd2
+    namespace: kube-system 
   spec:
     clusterIP: 10.96.0.10
     clusterIPs:
