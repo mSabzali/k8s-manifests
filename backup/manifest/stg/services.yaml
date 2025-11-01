@@ -6,13 +6,6 @@ items:
     name: hi-dev-service
     namespace: stg 
   spec:
-    clusterIP: 10.111.22.58
-    clusterIPs:
-    - 10.111.22.58
-    internalTrafficPolicy: Cluster
-    ipFamilies:
-    - IPv4
-    ipFamilyPolicy: SingleStack
     ports:
     - port: 80
       protocol: TCP
