@@ -3,8 +3,9 @@ kind: Ingress
 metadata:
   name: hi-dev-ingress
   namespace: dev
-  #annotations:
-    #nginx.ingress.kubernetes.io/rewrite-target: /$2
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   ingressClassName: nginx
   rules:
@@ -20,8 +21,8 @@ spec:
                   number: 80
 
           # 2. /nginx/* → nginx-service, strip /nginx, use REGEX
-          - path: /nginx
-            pathType: Prefix   # <-- REQUIRED for regex!
+          - path: /nginx(/|$)(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: nginx-service
