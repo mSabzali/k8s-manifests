@@ -21,7 +21,7 @@ spec:
                   number: 80
 
           # 2. /nginx/* → nginx-service, strip /nginx, use REGEX
-          - path: /nginx(/|$)(.*)
+          - path: /nginx
             pathType: Prefix
             backend:
               service:
