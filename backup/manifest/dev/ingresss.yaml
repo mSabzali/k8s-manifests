@@ -14,17 +14,17 @@ items:
         paths:
         - backend:
             service:
-              name: nginx-service
-              port:
-                number: 80
-          path: /nginx(/|$)(.*)
-          pathType: ImplementationSpecific
-        - backend:
-            service:
               name: hi-dev-service
               port:
                 number: 80
           path: /
+          pathType: Prefix
+        - backend:
+            service:
+              name: nginx-service
+              port:
+                number: 80
+          path: /nginx(/|$)(.*)
           pathType: Prefix
   status:
     loadBalancer:
