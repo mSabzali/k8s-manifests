@@ -14,14 +14,14 @@ items:
         paths:
         - backend:
             service:
-              name: hi-dev-service
+              name: nginx-service
               port:
                 number: 80
-          path: /h(/|$)(.*)
+          path: /nginx(/|$)(.*)
           pathType: ImplementationSpecific
         - backend:
             service:
-              name: nginx-service
+              name: hi-dev-service
               port:
                 number: 80
           path: /
