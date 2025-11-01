@@ -1,35 +1,29 @@
-apiVersion: v1
-items:
-- apiVersion: networking.k8s.io/v1
-  kind: Ingress
-  metadata:
-    annotations:
-      nginx.ingress.kubernetes.io/rewrite-target: /$2
-    name: hi-dev-ingress
-    namespace: dev
-  spec:
-    ingressClassName: nginx
-    rules:
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hi-dev-ingress
+  namespace: dev
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
     - http:
         paths:
-        - backend:
-            service:
-              name: hi-dev-service
-              port:
-                number: 80
-          path: /
-          pathType: Prefix
-        - backend:
-            service:
-              name: nginx-service
-              port:
-                number: 80
-          path: /nginx(/|$)(.*)
-          pathType: Prefix
-  status:
-    loadBalancer:
-      ingress:
-      - ip: 192.168.70.11
-kind: List
-metadata:
-  resourceVersion: ""
+          # 1. Root → hi-dev-service
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hi-dev-service
+                port:
+                  number: 80
+
+          # 2. /nginx/* → nginx-service, strip /nginx, use REGEX
+          - path: /nginx(/|$)(.*)
+            pathType: ImplementationSpecific   # <-- REQUIRED for regex!
+            backend:
+              service:
+                name: nginx-service
+                port:
+                  number: 80
