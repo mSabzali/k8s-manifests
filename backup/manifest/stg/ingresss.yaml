@@ -2,12 +2,13 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: hi-dev-ingress
-  namespace: stg 
+  namespace: stg
 spec:
   ingressClassName: nginx
   rules:
-    - http:
-        paths: 
+    - host: hi-stg.example.com   # 👈 unique host
+      http:
+        paths:
           - path: /
             pathType: Prefix
             backend:
