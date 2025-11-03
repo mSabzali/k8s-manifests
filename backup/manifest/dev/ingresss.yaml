@@ -10,7 +10,7 @@ spec:
   ingressClassName: nginx
   rules:
     - host: hi-dev.example.com   # 👈 unique host
-    - http:
+      http:
         paths:
           # 1. Root → hi-dev-service
           - path: /
