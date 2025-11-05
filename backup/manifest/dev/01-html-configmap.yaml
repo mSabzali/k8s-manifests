@@ -1,0 +1,27 @@
+# k8s/nginx/01-html-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-html
+  namespace: dev
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html><body>
+    <h1 style="color: blue;">صفحه اصلی (Root)</h1>
+    <p>اینجا <code>/</code> است.</p>
+    </body></html>
+
+  nginx/index.html: |
+    <!DOCTYPE html>
+    <html><body>
+    <h1 style="color: green;">صفحه /nginx</h1>
+    <p>اینجا <code>/nginx</code> است.</p>
+    </body></html>
+
+  nginx/green/index.html: |
+    <!DOCTYPE html>
+    <html><body>
+    <h1 style="color: lime;">صفحه /nginx/green</h1>
+    <p>اینجا <code>/nginx/green</code> است.</p>
+    </body></html>

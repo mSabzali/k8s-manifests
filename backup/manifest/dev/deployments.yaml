@@ -102,7 +102,10 @@ items:
         volumes:
           - name: nginx-config
             configMap:
-              name: nginx-conf
+              name: nginx-conf   
+          - name: html-content
+            configMap:
+              name: nginx-html
         dnsPolicy: ClusterFirst
         restartPolicy: Always
         terminationGracePeriodSeconds: 30
