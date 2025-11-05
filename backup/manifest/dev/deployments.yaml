@@ -96,6 +96,8 @@ items:
               - name: nginx-config
                 mountPath: /etc/nginx/nginx.conf
                 subPath: nginx.conf
+              - name: html-content
+                mountPath: /usr/share/nginx/html
             resources: { }
             terminationMessagePath: /dev/termination-log
             terminationMessagePolicy: File
