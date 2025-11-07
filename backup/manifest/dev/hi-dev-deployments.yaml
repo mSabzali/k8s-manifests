@@ -32,5 +32,5 @@ spec:
               cpu: "100m"        # 0.1 CPU requested
               memory: "128Mi"    # base memory reservation
             limits:
-              cpu: "200m"        # max 0.2 CPU per pod
+              cpu: "500m"        # max 0.5 CPU per pod
               memory: "256Mi"    # cap memory usage
