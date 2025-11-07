@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+  namespace: dev
+data:
+  default.conf: |
+    server {
+        listen 80;
+
+        location /nginx {
+            return 200 "This is /nginx path\n";
+        }
+
+        location /nginx/green {
+            return 200 "This is /nginx/green path\n";
+        }
+
+        location /nginx/red {
+            return 200 "This is /nginx/red path\n";
+        }
+    }
