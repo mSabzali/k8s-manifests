@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: hi-dev
-          image: sabzali/devops-api:2025.11.01-19
+          image: sabzali/devops-api:2025.11.07-21
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
